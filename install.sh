@@ -25,3 +25,5 @@ $PYTHON_COMMAND -m venv "$BASEDIR/env"
 source "$BASEDIR/env/bin/activate"
 pip install -r "$BASEDIR/requirements.txt"
 
+## https://snapcraft.io/chromium
+#sudo snap install chromium

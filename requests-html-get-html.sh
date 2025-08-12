@@ -1,19 +1,5 @@
 #!/usr/bin/env bash
-CMDNAME=`basename $0`
-##
-usage_exit() {
-	echo "Usage : ${CMDNAME} [url] [HTML|LOGS]"
-	exit 1
-}
-
-if [ $# -ne 2 ]; then
-    usage_exit
-fi
-
-
 TARGET_URL=$1
-OPTION=$2
-
 cd $(dirname $0)
 set -e
 PYTHON_COMMAND="python3"
@@ -38,7 +24,7 @@ BASEDIR=$(pwd)
 # shellcheck disable=SC1091
 source "$BASEDIR/env/bin/activate"
 
-$PYTHON_COMMAND src/scraper.py "${TARGET_URL}" ${OPTION}
+$PYTHON_COMMAND src/requests-html-get-html.py "${TARGET_URL}" HTML
 
 
 
